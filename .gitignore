@@ -1,0 +1,21 @@
+# Don't include trailing slashes for directories!
+.settings
+.classpath
+.project
+.externalToolBuilders
+.springBeans
+.metadata
+.elasticdump
+.idea
+*.iml
+target
+logs
+pom.xml.versionsBackup
+
+/JobTypeMapping.csv
+/jobTypeMapping.pl
+/JobTypeMapping.xls
+
+cacheBuilder.properties
+chromedriver.log
+integration-tests/src/systest/xtend-gen

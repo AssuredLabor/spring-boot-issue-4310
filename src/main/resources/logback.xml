@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- For assistance related to logback-translator or configuration -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user -->
+<!-- -->
+<!-- For professional support please see -->
+<!-- http://www.qos.ch/shop/products/professionalSupport -->
+<!-- -->
+<configuration debug="true">
+	<!-- <configuration> -->
+	<property name="user_home" value="${user.home}" />
+
+	<!-- Name the context so if we share an application server with another logback implementation there isn't a collision -->
+	<!-- http://logback.qos.ch/manual/jmxConfig.html#multiple -->
+	<contextName>springboot-issue4310</contextName>
+
+	<jmxConfigurator />
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!--See http://logback.qos.ch/manual/appenders.html#RollingFileAppender -->
+		<!--and http://logback.qos.ch/manual/appenders.html#TimeBasedRollingPolicy -->
+		<!--for further documentation -->
+		<File>${user_home}/logs/${CONTEXT_NAME}.log</File>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%d [%t] %c{4} %-5p: %m%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${user_home}/logs/${CONTEXT_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d [%t] %c{4} %-5p: %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.mchange" level="INFO" />
+	<logger name="net.sourceforge.stripes" level="INFO" />
+	<logger name="org.springframework" level="INFO" />
+	<logger name="com.avaje" level="INFO" />
+	<logger name="org.example" level="INFO" />
+
+	<include file="${user_home}/loggingConfig.xml" />
+
+	<root level="error">
+		<appender-ref ref="${appender:-console}" />
+	</root>
+</configuration>
