@@ -4,7 +4,6 @@ import org.example.configuration.ApplicationConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.Ordered;
@@ -16,7 +15,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @Import({ApplicationConfiguration.class})
-@ComponentScan(basePackages={"org.example.web.controllers"})
 @EnableTransactionManagement
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @SpringBootApplication
