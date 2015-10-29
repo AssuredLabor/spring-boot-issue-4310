@@ -14,6 +14,7 @@ import org.springframework.boot.context.embedded.ErrorPage;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.core.Ordered;
@@ -22,10 +23,8 @@ import org.springframework.http.HttpStatus;
 import net.sourceforge.stripes.controller.DispatcherServlet;
 import net.sourceforge.stripes.controller.StripesFilter;
 
-@ImportResource({
-	"classpath*:/database.xml"
-})
 @Configuration
+@ComponentScan({"org.example.ebeans"})
 public class ApplicationConfiguration {
 	
 	@Bean(name="stripesFilter")
