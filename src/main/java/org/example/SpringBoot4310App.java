@@ -4,6 +4,7 @@ import org.example.configuration.ApplicationConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.Ordered;
@@ -17,6 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Import({ApplicationConfiguration.class})
 @EnableTransactionManagement
 @Order(Ordered.HIGHEST_PRECEDENCE)
+@ComponentScan({"org.example.ebeans"})
 @SpringBootApplication
 public class SpringBoot4310App extends SpringBootServletInitializer {
 
