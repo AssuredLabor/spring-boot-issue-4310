@@ -51,11 +51,16 @@ public class EbeanFactoryBean implements FactoryBean<EbeanServer>, EnvironmentAw
 		config.setDefaultServer(true);
 		config.setRegister(true);
 		
-		List<String> packages = new ArrayList<String>();
+		List<String> packages = new ArrayList<>();
 		packages.add("org.example.beans");
 
 		config.setPackages(packages);
 		//config.loadTestProperties();
+		
+		List<String> jars = new ArrayList<>();
+		jars.add("spring-boot-stripes-ebeans-core-0.0.1-SNAPSHOT.jar");
+		
+		config.setJars(jars);
 
 		return EbeanServerFactory.create(config);
 	}

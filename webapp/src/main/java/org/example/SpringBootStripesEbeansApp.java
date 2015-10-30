@@ -15,7 +15,7 @@ import net.sourceforge.stripes.vfs.VFS;
  */
 @Import({ApplicationConfiguration.class})
 @SpringBootApplication
-public class SpringBootStripesEbeans extends SpringBootServletInitializer {
+public class SpringBootStripesEbeansApp extends SpringBootServletInitializer {
 	
 	static {
 		VFS.addImplClass(SpringBootVfs.class);
@@ -23,11 +23,11 @@ public class SpringBootStripesEbeans extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(SpringBootStripesEbeans.class);
+		return application.sources(SpringBootStripesEbeansApp.class);
 	}
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SpringBootStripesEbeans.class, args);
+		SpringApplication.run(SpringBootStripesEbeansApp.class, args);
 	}
 
 }
