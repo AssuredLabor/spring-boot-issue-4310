@@ -1,4 +1,9 @@
-This project demonstrates [Spring-Boot Issue #4310](https://github.com/spring-projects/spring-boot/issues/4310)
+This project demonstrates:
+
+*  [Stripes cannot scan classpath correctly with Spring-Boot](https://github.com/StripesFramework/stripes/issues/35)
+*  [Spring-Boot Issue #4310](https://github.com/spring-projects/spring-boot/issues/4310)
+
+**Possible Work-Around**: See the [multi-module branch](https://github.com/AssuredLabor/spring-boot-issue-4310/tree/multi-module) for a possible solution. 
 
 ## Code works when run from .class files
 
