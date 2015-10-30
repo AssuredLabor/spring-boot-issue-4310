@@ -16,7 +16,6 @@ import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpStatus;
 
@@ -49,11 +48,14 @@ public class ApplicationConfiguration {
 	@Bean(name="stripesServlet")
 	public ServletRegistrationBean stripesServlet() {
 		Servlet servlet = new DispatcherServlet();
-	
+		
 		ServletRegistrationBean registration = new ServletRegistrationBean(servlet);
 		List<String> urlMappings = new ArrayList<String>();
 		urlMappings.add("/page/*");
 		registration.setUrlMappings(urlMappings);
+		
+		// This is important to allow the regular Spring-MVC DispatcherServlet to auto-configure itself.
+		registration.setName("stripesServlet");
 		
 		return registration;
 	}

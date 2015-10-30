@@ -6,15 +6,15 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.7.RELEASE</version>
+		<version>1.3.0.RC1</version>
 	</parent>
 
 	<groupId>org.example.bugs</groupId>
-	<artifactId>spring-boot-issue-4310</artifactId>
+	<artifactId>spring-boot-stripes-ebeans</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
-	<name>Spring-Boot Issue 4310 Example</name>
+	<name>Spring-Boot With Stripes and Ebeans</name>
 
 	<scm>
 		<connection>scm:git:git://git@github.com/AssuredLabor/spring-boot-issue-4310.git</connection>
@@ -26,7 +26,7 @@
 	</prerequisites>
 
 	<properties>
-		<start-class>org.example.SpringBoot4310App</start-class>
+		<start-class>org.example.SpringBootStripesEbeans</start-class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<spring.security.version>3.2.5.RELEASE</spring.security.version>
@@ -106,10 +106,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- <version>1.3.0.RC1</version> -->
-				<version>1.3.0.M2</version>
+				<version>1.3.0.RC1</version>
 				<configuration>
-					<executable>true</executable>
+					<executable>false</executable>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -215,7 +214,7 @@
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
-			<!--scope>provided</scope-->
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>jstl</groupId>
@@ -226,6 +225,11 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.16.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.janino</groupId>
+			<artifactId>janino</artifactId>
+			<version>2.7.8</version>
 		</dependency>
 	</dependencies>
 	

@@ -9,12 +9,12 @@ First run the project from Maven:
 In the logs you should see these lines:
 
 ```
-2015-10-27 17:23:14,862 [org.example.SpringBoot4310App.main()] c.a.e.s.c.BootupClassPathSearch INFO : Classpath search hits in jars[] pkgs[org.example.beans]  searchTime[26]
-2015-10-27 17:23:15,220 [org.example.SpringBoot4310App.main()] c.a.e.s.c.DefaultServerFactory WARN : DataSource [db] has autoCommit defaulting to true!
-2015-10-27 17:23:15,239 [org.example.SpringBoot4310App.main()] c.a.e.s.c.DefaultServerFactory INFO : DatabasePlatform name:db platform:h2
-2015-10-27 17:23:15,338 [org.example.SpringBoot4310App.main()] c.a.e.a.ClassLoadContext DEBUG: Context and Caller ClassLoader's same instance of java.net.URLClassLoader
-2015-10-27 17:23:15,400 [org.example.SpringBoot4310App.main()] c.a.e.s.d.BeanDescriptorManager DEBUG: BeanPersistControllers[0] BeanFinders[0] BeanPersistListeners[0] BeanQueryAdapters[0]
-2015-10-27 17:23:15,489 [org.example.SpringBoot4310App.main()] c.a.e.s.d.BeanDescriptorManager INFO : Entities enhanced[1]
+2015-10-27 17:23:14,862 [org.example.SpringBootStripesEbeans.main()] c.a.e.s.c.BootupClassPathSearch INFO : Classpath search hits in jars[] pkgs[org.example.beans]  searchTime[26]
+2015-10-27 17:23:15,220 [org.example.SpringBootStripesEbeans.main()] c.a.e.s.c.DefaultServerFactory WARN : DataSource [db] has autoCommit defaulting to true!
+2015-10-27 17:23:15,239 [org.example.SpringBootStripesEbeans.main()] c.a.e.s.c.DefaultServerFactory INFO : DatabasePlatform name:db platform:h2
+2015-10-27 17:23:15,338 [org.example.SpringBootStripesEbeans.main()] c.a.e.a.ClassLoadContext DEBUG: Context and Caller ClassLoader's same instance of java.net.URLClassLoader
+2015-10-27 17:23:15,400 [org.example.SpringBootStripesEbeans.main()] c.a.e.s.d.BeanDescriptorManager DEBUG: BeanPersistControllers[0] BeanFinders[0] BeanPersistListeners[0] BeanQueryAdapters[0]
+2015-10-27 17:23:15,489 [org.example.SpringBootStripesEbeans.main()] c.a.e.s.d.BeanDescriptorManager INFO : Entities enhanced[1]
 ```
 
 The first and last lines above indicate [Ebeans](http://ebean-orm.github.io/) was able to scan for the class `org.example.beans.User`

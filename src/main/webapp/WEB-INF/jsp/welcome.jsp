@@ -11,5 +11,9 @@
 <html>
 	<body>
 		Welcome!
+		
+		${actionBean.message}
+		
+		<stripes:label name="labelText" />
 	</body>
 </html>
